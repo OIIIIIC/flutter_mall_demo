@@ -78,12 +78,6 @@ class _TabBarPageState extends State<TabsCase> {
           Center(child: Text('我的')),
         ],
       ),
-      appBar: AppBar(
-        title: const Text("综合案例"),
-        backgroundColor: Colors.blue, // 背景颜色
-        foregroundColor: Colors.white, // 字体颜色
-        centerTitle: true, // 标题居中
-      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed, // 固定底部导航栏
         items: getTabBarList(),

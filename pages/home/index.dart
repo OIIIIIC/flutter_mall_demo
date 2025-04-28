@@ -40,9 +40,10 @@ class _HomePageState extends State<HomePage> {
       navList = resData['items'][3]['data'];
       // 2.4 广告图片数据
       adList = resData['items'][4]['data'];
-      // 2.5 猜你喜欢商品数据，需要根据实际接口返回结构调整索引
-      // 这里假设商品数据在 items 数组的第 5 个元素中
-      // goodsList = resData['items'][5]['data'];
+      // 2.5 猜你喜欢标题栏
+      resData['items'][6]['title'] = '—— 猜你喜欢 ——';
+      // 2.6 猜你喜欢商品数据
+      goodsList = resData['items'][6]['data'];
     });
   }
 
