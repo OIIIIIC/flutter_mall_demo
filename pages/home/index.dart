@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import '../../components/home_banner.dart';
 import '../../components/home_nav.dart';
+import '../../components/home_shop_list.dart';
 import '../../components/shop_search_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   List bannerList = [];
   List navList = [];
   List adList = [];
+  List goodsList = [];
 
   @override
   void initState() {
@@ -38,6 +40,9 @@ class _HomePageState extends State<HomePage> {
       navList = resData['items'][3]['data'];
       // 2.4 广告图片数据
       adList = resData['items'][4]['data'];
+      // 2.5 猜你喜欢商品数据，需要根据实际接口返回结构调整索引
+      // 这里假设商品数据在 items 数组的第 5 个元素中
+      // goodsList = resData['items'][5]['data'];
     });
   }
 
@@ -72,6 +77,7 @@ class _HomePageState extends State<HomePage> {
               child: const Text('—— 猜你喜欢 ——'),
             ),
           ),
+          HomeShopList(goodsList: goodsList)
         ],
       ),
     );
